@@ -1,0 +1,585 @@
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+  margin: 10;
+  font-family: "Lucida Grande", "Helvetica Neue", Arial, sans-serif;
+   color: #3a3a3a;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+   padding-top: -50px; /* same height as menu bar */
+
+
+  /* FRUTIGER AERO SKY */
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.6), transparent 40%),
+    radial-gradient(circle at 80% 10%, rgba(200,255,255,0.5), transparent 45%),
+    linear-gradient(
+      to bottom,
+      #7ec8ff 0%,
+      #b6e3ff 35%,
+      #e9f7ff 60%,
+      #e6f4ec 100%
+    );
+
+  min-height: 100vh;
+}
+
+/* ===== macOS LEOPARD MENU BAR ===== */
+.menu-bar {
+   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  transform: translateZ(0);
+
+  height: 28px; /* Leopard-style height */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: linear-gradient(
+    to bottom,
+    #f6f6f6 0%,
+    #dcdcdc 50%,
+    #bfbfbf 100%
+  );
+
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+  box-shadow: inset 0 1px rgba(255,255,255,0.8);
+
+  z-index: 9999;
+
+  backdrop-filter: blur(6px);
+
+   pointer-events: auto;
+  transform: none !important;
+  isolation: isolate;
+}
+
+.menu-left,
+.menu-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.apple {
+  font-size: 14px;
+  margin-right: 6px;
+  margin-left: 20px;
+}
+
+.menu-title {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.menu-item {
+  cursor: default;
+  padding: 2px 6px;
+  line-height: 20px;
+  box-sizing: border-box;
+
+}
+
+.menu-item:hover {
+  background: rgba(0,0,0,0.08);
+  border-radius: 4px;
+
+}
+
+.menu-right {
+  gap: 10px;
+}
+
+.menu-logo {
+  height: 23px;
+  width: auto;
+  opacity: 0.85;
+}
+
+.menu-icon {
+  font-size: 14px;
+}
+
+.menu-time {
+  margin-left: 6px;
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+/* ===== HEADINGS ===== */
+h1, h2 {
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.9),
+    0 -1px 0 rgba(0,0,0,0.05);
+}
+
+/* ===== WINDOW ===== */
+.window {
+  outline: 2px solid red;
+  max-width: 900px;
+  width: 100%;
+  margin:3rem auto;
+  border-radius: 10px;
+  margin-top: -30px;
+  margin-left: 5rem;
+  margin-right: 5rem;
+
+  background: linear-gradient(
+    to bottom,
+    #fdfdfd 0%,
+    #f0f0f0 100%
+  );
+
+  border: 1px solid rgba(0,0,0,0.35);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.85),
+    inset 0 -1px 0 rgba(0,0,0,0.08),
+    0 30px 60px rgba(0,0,0,0.35);
+
+  overflow: hidden;
+}
+
+/* ===== TITLEBAR ===== */
+.titlebar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  display: fixed;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  margin-bottom: 100px;
+
+  z-index: 9999;
+
+   background: linear-gradient(
+    to bottom,
+    #fdfdfd 0%,
+    #ececec 40%,
+    #d1d1d1 100%
+  );
+
+ background-image:
+    linear-gradient(
+      to bottom,
+      #fdfdfd,
+      #dcdcdc
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0,0,0,0.02),
+      rgba(0,0,0,0.02) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+
+  border-bottom: 1px solid rgba(0,0,0,0.4);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.8);
+
+    pointer-events: auto;
+  transform: none !important;
+  isolation: isolate;
+}
+
+/* ===== HERO ===== */
+.hero {
+  margin: 2rem;
+  margin-top: 100px;
+  padding: 2px 15px;
+  border-radius: 12px;
+  text-align: center;
+   transform: scale(0.50);
+  transform-origin: top center;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #eef6ff 45%,
+      #d6ebff 100%
+    );
+
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,0.9),
+    inset 0 -1px 0 rgba(0,0,0,0.15),
+    0 12px 30px rgba(0,0,0,0.35);
+
+    margin-bottom: -440px;
+}
+
+.hero h1 {
+  font-size: 7rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 2.0rem;
+  opacity: 0.85;
+}
+
+/* ===== BUTTONS ===== */
+.cta {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.8rem;
+  margin-bottom: 1.5rem;
+
+  font-weight: bold;
+  text-decoration: none;
+  color: #003a66;
+  
+
+  border-radius: 999px;
+  border: 1px solid #2b6ea3;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #bfe9ff 0%,
+      #6bbcff 45%,
+      #3a8dde 100%
+    );
+
+   box-shadow:
+    0 0 12px rgba(0,150,255,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+.cta.large {
+  font-size: 2.7rem;
+  padding: 0.9rem 2.2rem;
+}
+
+.cta:hover {
+  box-shadow:
+    0 0 12px rgba(0,150,255,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+/* ===== SECTIONS ===== */
+section {
+  margin: 1.5rem auto;
+  padding: 1.5rem;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.75);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+section h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  letter-spacing: -0.3px;
+}
+
+/* ===== CARDS ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+}
+
+.card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: linear-gradient(to bottom, #ffffff, #f2f6fb);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8),
+              0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+/* ===== GALLERY ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 1rem;
+  margin: 0 auto
+}
+
+.gallery-item {
+  background: linear-gradient(to bottom, #f6f9fc, #e3edf7);
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+
+  height: 180px;          /* controls image size indirectly */
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.8),
+    0 8px 20px rgba(0,0,0,0.15);
+  text-align: center;
+   border-radius: 16px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.7),
+    rgba(240,240,240,0.9)
+  );
+}
+
+.gallery-item img {
+  max-width: 90%;
+  max-height: 250px;
+  object-fit: cover;
+  margin-bottom: 8px;
+   border-radius: 12px;        /* curved corners */
+  border: 4px solid #ffffff; /* clean white outline */
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.8),
+    0 6px 14px rgba(0,0,0,0.25);
+
+  background: #fff;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
+  justify-content: center;
+}
+
+.image-placeholder {
+  height: 120px;
+  border-radius: 12px;
+  background: linear-gradient(to bottom, #dbe6f5, #bfcfe6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* ===== BOOKING ===== */
+.booking {
+  text-align: center;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* ===== MAC OS X LEOPARD WINDOW CONTROLS ===== */
+
+.titlebar {
+  display: flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 12px;
+  background: linear-gradient(
+    to bottom,
+    #f6f6f6 0%,
+    #e1e1e1 50%,
+    #cfcfcf 100%
+  );
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+}
+
+.window-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.window:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+/* ===== Leopard window buttons ===== */
+.dots{
+  display:flex;
+  gap: 8px;
+  padding: 6px 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 1px 1px rgba(255,255,255,0.9),
+    inset 0 -1px 1px rgba(0,0,0,0.25),
+    0 1px 1px rgba(0,0,0,0.35);
+    /* bevel ring */
+  border: 1px solid rgba(0,0,0,0.45);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.85),
+    inset 0 -1px 1px rgba(0,0,0,0.25),
+    0 1px 1px rgba(0,0,0,0.25);
+
+  /* base fill (color variants below override the background) */
+  background: #ccc;  
+}
+
+/* Individual dot colors */
+.dot.red {
+  background: radial-gradient(circle at 30% 30%, #ff9a9a, #d40000);
+}
+
+.dot.yellow {
+  background: radial-gradient(circle at 30% 30%, #ffe88a, #d4a400);
+}
+
+.dot.green {
+  background: radial-gradient(circle at 30% 30%, #a6ff9a, #2a8f00);
+}
+
+/* Title text centered like Leopard */
+.title {
+  flex: 1;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #333;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+  pointer-events: none;
+}
+
+/* ===== MOBILE OPTIMIZATION ===== */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+@media (max-width: 600px) {
+
+  /* Stop the fixed bars from eating your screen */
+  .menu-bar{
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+  }
+
+  .titlebar{
+    position: sticky;
+    top: 28px;             /* sits right under menu bar */
+    z-index: 99998;
+  }
+
+  /* body values are desktop-ish (and negative padding doesn’t work) */
+  body{
+    margin: 0;             /* current "margin: 10" has no unit */
+    padding-top: 0;        /* negative padding doesn't exist */
+  }
+
+  /* Window should fit the phone */
+  .window{
+    outline: none;         /* remove debug red box on mobile */
+    margin: -30px;
+    margin-top: 10px;
+    width: auto;
+    max-width: 100%;
+    border-radius: 12px;
+  }
+
+  /* Hero: remove the huge scale trick for mobile */
+  .hero{
+    margin: 12px;
+    margin-top: 12px;
+    padding: 14px;
+    transform: none;       /* THIS is the big one */
+    margin-bottom: 12px;   /* kill the negative desktop spacing */
+  }
+
+  .hero h1{
+    font-size: 2rem;
+    margin: 0 0 10px 0;
+  }
+
+  .hero h1 img{
+    max-width: 220px;
+    width: 70%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .subtitle{
+    font-size: 1rem;
+    line-height: 1.35;
+    margin: 0 auto;
+    max-width: 30ch;
+  }
+
+  .cta.large{
+    font-size: 1.2rem;
+    padding: 0.75rem 1.2rem;
+  }
+
+  /* Make sections breathe on mobile */
+  section{
+    margin: 12px;
+    padding: 14px;
+  }
+
+  section h2{
+    font-size: 1.15rem;
+  }
+
+  /* Cards + gallery should become single column */
+  .cards{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .gallery{
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin: 12px;
+  }
+
+  .gallery-item{
+    height: auto;
+    padding: 10px;
+  }
+
+  .gallery-item img{
+    max-width: 100%;
+    width: 100%;
+    max-height: 260px;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Menu bar text gets too crowded */
+  .menu-title{
+    display: none;         /* keeps the vibe but makes it usable */
+  }
+  .menu-item{
+    display: none;         /* hides File/Edit/etc on mobile */
+  }
+  .menu-time{
+    font-size: 14px;
+  }
+  .menu-logo{
+    height: 18px;
+  }
+
+  footer{
+    padding: 18px 12px;
+    font-size: 0.8rem;
+  }
+}
