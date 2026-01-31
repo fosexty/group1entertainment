@@ -39,11 +39,13 @@ body {
               radial-gradient(900px 700px at 50% 95%, rgba(123,255,184,0.10), transparent 60%),
               linear-gradient(180deg, var(--bg0), var(--bg1));
   overflow-x: hidden;
+
+   position: relative;
   
 }
 
 /* Background layers */
-.bg { position: fixed; inset: 0; z-index: -1; }
+.bg { position: absolute; inset: 0; z-index: -1; }
 /* ==========================
    FULL OUTRUN BACKGROUND UPGRADE
    ========================== */
@@ -963,5 +965,85 @@ body::before{
   .hero-left,
   .hero-right{
     backdrop-filter: blur(10px);
+  }
+
+   /* ==========================
+   MOBILE PERFORMANCE MODE
+   ========================== */
+@media (max-width: 980px){
+
+  /* 1) Kill the #1 lag source on iOS */
+  .nav,
+  .panel,
+  .card,
+  .hero-left,
+  .hero-right,
+  .hero-card,
+  .person{
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* 2) Replace heavy glass with simple translucent fills */
+  .nav{
+    background: rgba(0,0,0,0.78) !important;
+  }
+  .panel,
+  .card,
+  .hero-left,
+  .hero-right,
+  .hero-card,
+  .person{
+    background: rgba(10,10,18,0.82) !important;
+    border-color: rgba(255,255,255,0.14) !important;
+  }
+
+  /* 3) Reduce expensive shadows (huge repaint cost on scroll) */
+  .panel,
+  .card,
+  .hero-left,
+  .hero-right,
+  .hero-card,
+  .shot,
+  .person{
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45) !important;
+  }
+
+  /* 4) Remove all pseudo-overlay effects */
+  .panel::before,
+  .panel::after,
+  .card::after,
+  .hero-left::after,
+  .hero-right::after,
+  .sigil-panel::after{
+    display: none !important;
+  }
+
+  /* 5) Simplify the background layers to stop constant repaints */
+  .bg-grid{
+    transform: none !important;     /* removes perspective grid cost */
+    inset: 0 !important;
+    opacity: 0.18 !important;
+    background-size: 72px 72px !important;
+    filter: none !important;
+    mask-image: none !important;
+  }
+
+  .bg-grid::after{ display: none !important; }  /* kill laser sweep */
+  .bg-sun{ opacity: 0.12 !important; filter: none !important; } /* keep vibe, low cost */
+  .bg-orb{ display: none !important; }          /* big blurred blobs are expensive */
+  .bg::before{ display: none !important; }      /* scanlines/glows */
+  .bg::after{ display: none !important; }       /* star speckle */
+  .bg-noise{ opacity: 0.04 !important; }        /* keep tiny noise */
+
+  /* 6) Reduce any filters on images */
+  .sigil-image{
+    filter: none !important;
+  }
+
+  /* 7) Help browser skip offscreen rendering */
+  section.panel{
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 700px; /* prevents layout jump */
   }
 }
