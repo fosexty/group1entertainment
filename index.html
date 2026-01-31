@@ -1,198 +1,414 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Group 1 Entertainment Studios</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Group 1 Entertainment Studios</title>
+    <meta
+      name="description"
+      content="Professional recording, mixing, mastering, and creative production space in Marietta/Atlanta."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-
-    <!-- macOS Leopard Menu Bar -->
-<div class="menu-bar">
-  <div class="menu-left">
-    <span class="apple"></span>
-    <span class="menu-title">Group 1 Entertainment Studios</span>
-    <span class="menu-item">File</span>
-    <span class="menu-item">Edit</span>
-    <span class="menu-item">View</span>
-    <span class="menu-item">Go</span>
-    <span class="menu-item">Window</span>
-    <span class="menu-item">Help</span>
-  </div>
-
-  <div class="menu-right">
-    <a href="https://instagram.com/group1ent" target="_blank" rel="noopener">
-      <img src="images/insta.webp" alt="Logo" class="menu-logo"></a>
-    <img src="images/IMG_9324.PNG" alt="Logo" class="menu-logo">
-    <img src="images/wifi.png" alt="Logo" class="menu-logo">
-    <img src="images/bt.png" alt="Logo" class="menu-logo">
-    <span class="menu-time">4:20 AM</span>
-  </div>
-</div>
-
-<!-- APP WINDOW -->
-<div class="window">
-</div>
-
-    <!-- MAC TITLEBAR -->
-    <div class="titlebar">
-      <span class="dot red"></span>
-      <span class="dot yellow"></span>
-      <span class="dot green"></span>
+  <body>
+    <!-- Ambient background layers -->
+    <div class="bg">
+      <div class="bg-grid"></div>
+      <div class="bg-sun" aria-hidden="true"></div>
+      <div class="bg-orb orb-a"></div>
+      <div class="bg-orb orb-b"></div>
+      <div class="bg-orb orb-c"></div>
+      <div class="bg-noise"></div>
     </div>
 
-    <!-- HERO -->
-    <header class="hero">
-      <h1><img src="images/IMG_9324.PNG"alt="Group 1 Logo"></h1>
-      <p class="subtitle">
-        Professional recording, mixing, and creative production space.
-      </p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSf44cyN2bdYfoEMPh-fRe0driMsOFy9_rSdxSju_usiPobDkA/viewform?usp=dialog" class="cta large">Book Now</a>
+    <!-- Top Nav -->
+    <header class="nav">
+      <a class="brand" href="#top" aria-label="Group 1 Entertainment Studios home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name">Group 1</span>
+          <span class="brand-sub">Entertainment Studios</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Site">
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#engineers">Engineers</a>
+        <a href="#work">Quality Check</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a
+          class="icon-link"
+          href="https://instagram.com/group1ent"
+          target="_blank"
+          rel="noopener"
+          aria-label="Instagram"
+          title="Instagram"
+        >
+          IG
+        </a>
+        <a
+          class="btn btn-primary"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSf44cyN2bdYfoEMPh-fRe0driMsOFy9_rSdxSju_usiPobDkA/viewform?usp=dialog"
+          target="_blank"
+          rel="noopener"
+        >
+          Book Now
+        </a>
+      </div>
     </header>
 
-    <!-- ABOUT -->
-    <section>
-      <h2>About the Studio</h2>
-      <p>
-        A creative-first recording studio built for artists who care about sound,
-        energy, and atmosphere. From raw demos to final masters, we provide
-        a space that inspires performance. Our goal at Group 1 Entertainment Studios is to deliver a fresh and comfortable recording experience for an unbeatable price. We want people to feel welcome in our creative space.
-        Located in the Marietta/Atlanta area, we perform professional recording, mixing, mastering, custom production, ghost writing, and creative development services. We specialize in, but are not limited to, Hip-hop, R&B, Pop, and Alternative music.
-      </p>
-    </section>
+    <main id="top" class="wrap">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-left">
+          <div class="badge">
+            <span class="dot"></span>
+            <span>Marietta / Atlanta • Recording • Mixing • Masters</span>
+          </div>
 
-    <!-- SERVICES -->
-    <section>
-      <h2>Services</h2>
+          <h1 class="title">
+            Chrome-clean sound.<br />
+            <span class="title-accent">Future energy.</span>
+          </h1>
 
-      <div class="cards">
-        <div class="card">
-          <h3>Recording</h3>
-          <p>$35/hr</p>
-          <span>Vocal recording</span>
+          <p class="lead">
+            A creative-first studio built for artists who care about sonics, performance,
+            and atmosphere. From raw demos to release-ready records, we make it feel effortless.
+          </p>
+
+          <div class="hero-cta">
+            <a
+              class="btn btn-primary btn-lg"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSf44cyN2bdYfoEMPh-fRe0driMsOFy9_rSdxSju_usiPobDkA/viewform?usp=dialog"
+              target="_blank"
+              rel="noopener"
+            >
+              Book a Session
+            </a>
+            <a class="btn btn-ghost btn-lg" href="#services">See Pricing</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-top">Genres</div>
+              <div class="stat-bottom">Hip-hop • R&amp;B • Pop • Alternative</div>
+            </div>
+            <div class="stat">
+              <div class="stat-top">Services</div>
+              <div class="stat-bottom">Recording • Mix • Master • Production</div>
+            </div>
+            <div class="stat">
+              <div class="stat-top">Vibe</div>
+              <div class="stat-bottom">Comfortable • Focused • Creative</div>
+            </div>
+          </div>
         </div>
 
-        <div class="card">
-          <h3>Recording + Demo Mix</h3>
-          <p>$45/hr</p>
-          <span>Clean, presentable rough mixes</span>
-        </div>
+        <div class="hero-right">
+          <!-- Put your logo here -->
+          <div class="hero-card">
+            <div class="hero-logo">
+              <img
+                src="images/IMG_9324.PNG"
+                alt="Group 1 Entertainment Studios logo"
+                loading="lazy"
+              />
+            </div>
 
-        <div class="card">
-          <h3>Full Mix + Master</h3>
-          <p>$60/hr</p>
-          <span>Release-ready sound</span>
-        </div>
-      </div>
-    </section>
+            <div class="hero-card-body">
+              <div class="hero-card-row">
+                <span class="pill">Recording</span>
+                <span class="pill">Mixing</span>
+                <span class="pill">Mastering</span>
+                <span class="pill">Development</span>
+              </div>
 
-    <!-- STUDIO GALLERY -->
-    <div class="gallery">
-  <div class="gallery-item">
-    <img src="images/left.jpg" alt="Studio Room">
-  </div>
+              <div class="hero-card-line">
+                <span class="sigil" aria-hidden="true"></span>
+                <span class="muted">Unbeatable value. Serious sound.</span>
+              </div>
 
-  <div class="gallery-item">
-    <img src="images/center.jpg" alt="Vocal Booth">
-  </div>
+              <div class="hero-card-actions">
+                <a class="btn btn-primary" href="#work">Hear Work</a>
+                <a class="btn btn-ghost" href="#engineers">Meet Engineers</a>
+              </div>
+            </div>
+          </div>
 
-  <div class="gallery-item">
-    <img src="images/right.jpg" alt="Control Room">
-  </div>
+          <!-- Decorative chrome "sigil" panel -->
+          <div class="sigil-panel">
+  <img class="sigil-image" src="images/fold.png" alt="Studio highlight" />
+  <div class="sigil-lines"></div>
 </div>
 
-    <!-- TEAM -->
-    <section>
-      <h2>Engineers</h2>
+        </div>
+      </section>
 
-   <div class="card">
-          <h3>
-    <a href="https://instagram.com/gingholland" target="_blank" rel="noopener">
-      Mitch Holland
-    </a>
-  </h3>
-  <span>Recording / Mixing / Production | R&B • Pop • Clean Vocals <a href="https://instagram.com/gingholland" target="_blank" rel="noopener">
-     ...Instagram
-    </a></span>
-</div>
-
-
-        <div class="card">
-          <h3><a href="https://instagram.com/s3mi.mp3" target="_blank" rel="noopener">
-      S3mi
-    </a></h3>
-          <span>Recording / Mixing / Production | Vocal Production • Loud Rap • Cloud Rap • Alternative • Electronic <a href="https://instagram.com/s3mi.mp3" target="_blank" rel="noopener">
-     ...Instagram
-    </a></span></span>
+      <!-- ABOUT -->
+      <section class="panel" id="about">
+        <div class="panel-head">
+          <h2>About the Studio</h2>
+          <p>
+            A fresh, comfortable recording experience. Built to inspire performances and deliver
+            clean, modern mixes. Located in the Marietta/Atlanta area.
+          </p>
         </div>
 
-<div class="card">
-          <h3><a href="https://instagram.com/yxngkapfr_" target="_blank" rel="noopener">
-      KapFr
-    </a></h3>
-          <span>Recording / Mixing | Vocal Production • Executive Direction • Hard Hitting Trap <a href="https://instagram.com/yxngkapfr_" target="_blank" rel="noopener">
-     ...Instagram
-    </a></span></span>
+        <div class="about-grid">
+          <div class="about-card">
+            <h3>What we do</h3>
+            <ul class="list">
+              <li>Professional vocal recording + session workflow</li>
+              <li>Mixing + mastering for streaming-ready releases</li>
+              <li>Custom production + creative direction</li>
+              <li>Writing support / development (when needed)</li>
+            </ul>
+          </div>
+
+          <div class="about-card">
+            <h3>What you get</h3>
+            <ul class="list">
+              <li>High-quality sound with a fast, smooth session pace</li>
+              <li>Comfortable environment (artists feel welcome)</li>
+              <li>Clean deliverables and consistent results</li>
+              <li>Optional “demo mix” to leave with something playable</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="panel" id="services">
+        <div class="panel-head">
+          <h2>Services</h2>
+          <p>Simple, clear options. Choose your session vibe.</p>
         </div>
 
-         <div class="card">
-          <h3><a href="https://instagram.com/squeezyfbby" target="_blank" rel="noopener">
-      sQueezy !
-    </a></h3>
-          <span>Recording / Mixing | Trap • Writing Direction <a href="https://instagram.com/squeezyfbby" target="_blank" rel="noopener">
-     ...Instagram
-    </a></span></span>
+        <div class="cards">
+          <article class="card">
+            <div class="card-top">
+              <h3>Recording</h3>
+              <div class="price">$35<span>/hr</span></div>
+            </div>
+            <p class="card-desc">Vocal recording in a clean, performance-focused environment.</p>
+            <ul class="mini">
+              <li>Session setup</li>
+              <li>Recording + comp workflow</li>
+              <li>.wav/.mp3 exports</li>
+            </ul>
+            <a
+              class="btn btn-ghost"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSf44cyN2bdYfoEMPh-fRe0driMsOFy9_rSdxSju_usiPobDkA/viewform?usp=dialog"
+              target="_blank"
+              rel="noopener"
+            >
+              Book Recording
+            </a>
+          </article>
+
+          <article class="card card-featured">
+            <div class="shine" aria-hidden="true"></div>
+            <div class="card-top">
+              <h3>Recording + Demo Mix</h3>
+              <div class="price">$45<span>/hr</span></div>
+            </div>
+            <p class="card-desc">Clean, presentable rough mixes so you leave with momentum.</p>
+            <ul class="mini">
+              <li>Tracking + quick mix balance</li>
+              <li>Vocal clarity + vibe</li>
+              <li>Demo-ready export</li>
+            </ul>
+            <a
+              class="btn btn-primary"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSf44cyN2bdYfoEMPh-fRe0driMsOFy9_rSdxSju_usiPobDkA/viewform?usp=dialog"
+              target="_blank"
+              rel="noopener"
+            >
+              Book Demo Mix
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <h3>Full Mix + Master</h3>
+              <div class="price">$60<span>/hr</span></div>
+            </div>
+            <p class="card-desc">Release-ready sound with polish, depth, and loudness control.</p>
+            <ul class="mini">
+              <li>Full mix pass</li>
+              <li>Mastering chain</li>
+              <li>Final exports</li>
+            </ul>
+            <a class="btn btn-ghost" href="#work">Hear Examples</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section class="panel" id="gallery">
+        <div class="panel-head">
+          <h2>Studio Gallery</h2>
+          <p>Swap these images with your latest room shots.</p>
         </div>
 
-        <div class="card">
-          <h3><a href="https://instagram.com/700renaissance" target="_blank" rel="noopener">
-      Renaissance
-    </a></h3>
-          <span>Recording / Mixing | Alternative Hip-Hop • Trap <a href="https://instagram.com/700renaissance" target="_blank" rel="noopener">
-     ...Instagram
-    </a></span></span>
+        <div class="gallery">
+          <figure class="shot">
+            <img src="images/left.jpg" alt="Studio room" loading="lazy" />
+          </figure>
+          <figure class="shot">
+            <img src="images/center.jpg" alt="Vocal booth" loading="lazy" />
+          </figure>
+          <figure class="shot">
+            <img src="images/right.jpg" alt="Control room" loading="lazy" />
+          </figure>
+        </div>
+      </section>
+
+      <!-- ENGINEERS -->
+      <section class="panel" id="engineers">
+        <div class="panel-head">
+          <h2>Engineers</h2>
+          <p>Tap a name to hit their Instagram.</p>
         </div>
 
-        <div class="card">
-          <h3><a href="https://instagram.com/yrn.djinde" target="_blank" rel="noopener">
-      Djinde
-    </a></h3>
-          <span>Recording / Mixing | Trap • Alt Pop • World <a href="https://instagram.com/yrn.djinde" target="_blank" rel="noopener">
-     ...Instagram
-    </a></span></span>
+        <div class="people">
+          <a class="person" href="https://instagram.com/gingholland" target="_blank" rel="noopener">
+            <div class="person-top">
+              <div class="avatar" aria-hidden="true"></div>
+              <div>
+                <div class="person-name">Mitch Holland</div>
+                <div class="person-meta">Recording / Mixing / Production</div>
+              </div>
+            </div>
+            <div class="person-tags">
+              <span>R&amp;B</span><span>Pop</span><span>Clean Vocals</span>
+            </div>
+          </a>
+
+          <a class="person" href="https://instagram.com/s3mi.mp3" target="_blank" rel="noopener">
+            <div class="person-top">
+              <div class="avatar" aria-hidden="true"></div>
+              <div>
+                <div class="person-name">S3mi</div>
+                <div class="person-meta">Recording / Mixing / Production</div>
+              </div>
+            </div>
+            <div class="person-tags">
+              <span>Vocal Production</span><span>Loud Rap</span><span>Alternative</span><span>EDM</span>
+            </div>
+          </a>
+
+          <a class="person" href="https://instagram.com/yxngkapfr_" target="_blank" rel="noopener">
+            <div class="person-top">
+              <div class="avatar" aria-hidden="true"></div>
+              <div>
+                <div class="person-name">KapFr</div>
+                <div class="person-meta">Recording / Mixing</div>
+              </div>
+            </div>
+            <div class="person-tags">
+              <span>Vocal Production</span><span>Executive Direction</span><span>Trap</span>
+            </div>
+          </a>
+
+          <a class="person" href="https://instagram.com/squeezyfbby" target="_blank" rel="noopener">
+            <div class="person-top">
+              <div class="avatar" aria-hidden="true"></div>
+              <div>
+                <div class="person-name">sQueezy !</div>
+                <div class="person-meta">Recording / Mixing</div>
+              </div>
+            </div>
+            <div class="person-tags">
+              <span>Trap</span><span>Writing Direction</span>
+            </div>
+          </a>
+
+          <a class="person" href="https://instagram.com/700renaissance" target="_blank" rel="noopener">
+            <div class="person-top">
+              <div class="avatar" aria-hidden="true"></div>
+              <div>
+                <div class="person-name">Renaissance</div>
+                <div class="person-meta">Recording / Mixing</div>
+              </div>
+            </div>
+            <div class="person-tags">
+              <span>Alternative Hip-Hop</span><span>Trap</span>
+            </div>
+          </a>
+
+          <a class="person" href="https://instagram.com/yrn.djinde" target="_blank" rel="noopener">
+            <div class="person-top">
+              <div class="avatar" aria-hidden="true"></div>
+              <div>
+                <div class="person-name">Djinde</div>
+                <div class="person-meta">Recording / Mixing</div>
+              </div>
+            </div>
+            <div class="person-tags">
+              <span>Trap</span><span>Alt Pop</span><span>World</span>
+            </div>
+          </a>
+
+          <a class="person" href="https://instagram.com/heartbreakk1dd" target="_blank" rel="noopener">
+            <div class="person-top">
+              <div class="avatar" aria-hidden="true"></div>
+              <div>
+                <div class="person-name">kidd!</div>
+                <div class="person-meta">Production / Recording / Mixing</div>
+              </div>
+            </div>
+            <div class="person-tags">
+              <span>Executive Beat Production</span><span>Underground</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- QUALITY CHECK -->
+      <section class="panel panel-center" id="work">
+        <div class="panel-head center">
+          <h2>Quality Check</h2>
+          <p>Tap in to hear music recorded with us.</p>
         </div>
 
-         <div class="card">
-          <h3><a href="https://instagram.com/heartbreakk1dd" target="_blank" rel="noopener">
-      kidd!
-    </a></h3>
-          <span>Production / Recording / Mixing | Executive Beat Production • Underground <a href="https://instagram.com/heartbreakk1dd" target="_blank" rel="noopener">
-     ...Instagram
-    </a></span></span>
+        <div class="work-actions">
+          <a
+            class="btn btn-primary btn-lg"
+            href="https://open.spotify.com/playlist/2dNU8oRkpupv8kKSZSifXR?si=yArIAI6bQ3SL12JdSAFOkw&pi=CvoV8UVxRkqMa"
+            target="_blank"
+            rel="noopener"
+          >
+            Open Spotify Playlist
+          </a>
+          <a class="btn btn-ghost btn-lg" href="#services">View Services</a>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- References -->
-    <section class="booking">
-      <h2>Quality Check</h2>
-      <p>
-        Click below to hear examples of music that have been recorded by us!
-      </p>
-      <a href="https://open.spotify.com/playlist/2dNU8oRkpupv8kKSZSifXR?si=yArIAI6bQ3SL12JdSAFOkw&pi=CvoV8UVxRkqMa" class="cta large">Spotify</a>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-      <p>Group 1 Entertainment LLC — Marietta, GA</p>
-      <span>© 2025 All Rights Reserved</span>
-    </footer>
-
-  </div>
-</body>
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-left">
+            <div class="footer-brand">Group 1 Entertainment LLC</div>
+            <div class="footer-meta">Marietta, GA</div>
+          </div>
+          <div class="footer-right">
+            <a href="https://instagram.com/group1ent" target="_blank" rel="noopener">Instagram</a>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSf44cyN2bdYfoEMPh-fRe0driMsOFy9_rSdxSju_usiPobDkA/viewform?usp=dialog"
+              target="_blank"
+              rel="noopener"
+            >
+              Book Now
+            </a>
+          </div>
+        </div>
+        <div class="footer-copy">© 2025 All Rights Reserved</div>
+      </footer>
+    </main>
+  </body>
 </html>
-
-<!-- Dear anyone viewing this- Is the code broken? Yes! Does it work though? hell yeah 
- If it sounds good, it is good -Duke Ellington (probably) -->
