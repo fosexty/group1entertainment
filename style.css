@@ -85,80 +85,6 @@ body{
     saturate(1.25);
 }
 
-/* Neon “laser” sweep across the grid */
-.bg-grid::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(
-      90deg,
-      transparent 0%,
-      rgba(255,79,216,0.00) 38%,
-      rgba(255,79,216,0.55) 48%,
-      rgba(85,246,255,0.35) 52%,
-      rgba(255,79,216,0.00) 62%,
-      transparent 100%
-    );
-  opacity: 0.55;
-  mix-blend-mode: screen;
-  transform: translateX(-60%);
-  animation: laserSweep 4.2s linear infinite;
-}
-
-@keyframes laserSweep{
-  0%   { transform: translateX(-70%); }
-  100% { transform: translateX(70%); }
-}
-
-/* Classic outrun sun disk with stripes */
-/* Subtle outrun sun – atmospheric, not dominant */
-.bg-sun{
-  position: absolute;
-  left: 50%;
-  top: 38%;
-  width: 520px;
-  height: 520px;
-  transform: translate(-50%, -50%);
-  border-radius: 999px;
-
-  opacity: 0.35; /* KEY CHANGE */
-  z-index: -2;
-
-
-  background:
-    /* softened stripes */
-    repeating-linear-gradient(
-      to bottom,
-      rgba(0,0,0,0.0) 0px,
-      rgba(0,0,0,0.0) 26px,
-      rgba(0,0,0,0.25) 26px,
-      rgba(0,0,0,0.25) 38px
-    ),
-    /* muted sun gradient */
-    radial-gradient(
-      circle at 50% 60%,
-      rgba(255,120,60,0.28),
-      rgba(255,79,216,0.22) 40%,
-      rgba(180,124,255,0.16) 62%,
-      transparent 74%
-    );
-
-  filter:
-    blur(1.2px)
-    drop-shadow(0 0 22px rgba(255,79,216,0.18))
-    drop-shadow(0 0 42px rgba(85,246,255,0.10));
-
-  mix-blend-mode: screen;
-  pointer-events: none;
-}
-
-
-@keyframes sunPulse{
-  0%,100% { transform: translate(-50%, -50%) scale(1); opacity: 0.75; }
-  50%     { transform: translate(-50%, -50%) scale(1.03); opacity: 0.88; }
-}
-
 /* Louder horizon glow + scanlines */
 .bg::before{
   content:"";
@@ -1045,5 +971,80 @@ body::before{
   section.panel{
     content-visibility: auto;
     contain-intrinsic-size: 1px 700px; /* prevents layout jump */
+  }
+/* ==========================
+   DESKTOP PERFORMANCE MODE
+   Keep vibe, reduce GPU/CPU cost
+   ========================== */
+@media (min-width: 981px){
+
+  /* 1) Kill backdrop blur (huge cost) */
+  .nav,
+  .panel,
+  .card,
+  .hero-left,
+  .hero-right,
+  .hero-card,
+  .person{
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* 2) Replace “glass blur” look with cheap translucent fills */
+  .nav{
+    background: rgba(0,0,0,0.62) !important;
+  }
+  .panel,
+  .card,
+  .hero-left,
+  .hero-right,
+  .hero-card,
+  .person{
+    background: rgba(12,12,20,0.72) !important;
+    border-color: rgba(255,255,255,0.14) !important;
+  }
+
+  /* 3) Stop expensive always-running animations */
+  .bg-grid::after{ display:none !important; }  /* laser sweep */
+  .bg-orb{ display:none !important; }          /* big blurred blobs */
+  .bg-sun{ animation:none !important; }        /* sun pulse off */
+
+  /* Optional: keep the sun but cheaper */
+  .bg-sun{
+    filter: none !important;
+    opacity: 0.18 !important;
+  }
+
+  /* 4) Simplify filters/shadows (repaints while scrolling) */
+  .panel,
+  .card,
+  .hero-left,
+  .hero-right,
+  .hero-card,
+  .shot,
+  .person{
+    box-shadow: 0 12px 34px rgba(0,0,0,0.45) !important;
+  }
+
+  /* 5) Remove gleam overlays + pseudo layers that blend/paint */
+  .panel::before,
+  .panel::after,
+  .card::after,
+  .hero-left::after,
+  .hero-right::after,
+  .sigil-panel::after{
+    display:none !important;
+  }
+
+  /* 6) Keep the grid vibe, but cheaper */
+  .bg-grid{
+    opacity: 0.22 !important;
+    filter: none !important;
+  }
+
+  /* 7) Big win: only render sections when near viewport */
+  section.panel{
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 900px;
   }
 }
