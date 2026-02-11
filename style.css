@@ -1,4 +1,5 @@
 
+
 /* ==========================
    GROUP 1 — Y2K CHROME / CYBER SIGILISM
    ========================== */
@@ -59,6 +60,30 @@ body{
     radial-gradient(900px 700px at 50% 95%, rgba(255,79,216,0.16), transparent 60%),
     radial-gradient(700px 500px at 50% 55%, rgba(255,120,60,0.10), transparent 60%),
     linear-gradient(180deg, #03030a, #07081a);
+}
+
+@media (min-width: 768px) {
+  body {
+    /* Simplified gradients for desktop to reduce GPU load */
+    background:
+      radial-gradient(900px 400px at 20% 10%, rgba(85,246,255,0.10), transparent 60%),
+      radial-gradient(700px 300px at 85% 15%, rgba(180,124,255,0.12), transparent 55%),
+      linear-gradient(180deg, #03030a, #07081a);
+  }
+  .bg-orb {
+    /* Reduce blur and saturation for desktop */
+    filter: blur(8px) saturate(1.1);
+    opacity: 0.35;
+  }
+  body::before {
+    /* Reduce vignette intensity for desktop */
+    opacity: 0.35;
+  }
+  .bg-grid {
+    /* Lower opacity for desktop grid */
+    opacity: 0.35;
+    filter: drop-shadow(0 20px 45px rgba(0,0,0,0.55)) saturate(1.1);
+  }
 }
 
 /* 3D outrun grid (stronger + deeper) */
