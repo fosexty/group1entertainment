@@ -1,9 +1,4 @@
 
-
-/* ==========================
-   GROUP 1 — Y2K CHROME / CYBER SIGILISM
-   ========================== */
-
 :root {
   --bg0: #05050a;
   --bg1: #070815;
@@ -40,10 +35,9 @@ body {
               radial-gradient(900px 600px at 85% 15%, rgba(180,124,255,0.14), transparent 55%),
               radial-gradient(900px 700px at 50% 95%, rgba(123,255,184,0.10), transparent 60%),
               linear-gradient(180deg, var(--bg0), var(--bg1));
+  background-attachment: fixed;
   overflow-x: hidden;
-
-   position: relative;
-  
+  position: relative;
 }
 
 /* Background layers */
@@ -86,13 +80,14 @@ body{
   }
 }
 
-/* 3D outrun grid (stronger + deeper) */
+/* 3D outrun grid - DISABLED for performance */
 .bg-grid{
+  display: none;
   position: absolute;
   inset: -30%;
   transform-origin: 50% 65%;
   transform: perspective(900px) rotateX(66deg) translateY(-8%);
-  opacity: 0.60;
+  opacity: 0;
   z-index: -1;
 
 
@@ -111,7 +106,7 @@ body{
     saturate(1.25);
 }
 
-/* Louder horizon glow + scanlines */
+/* Louder horizon glow + scanlines - SIMPLIFIED */
 .bg::before{
   content:"";
   position:absolute;
@@ -119,26 +114,17 @@ body{
   pointer-events:none;
 
   background:
-    /* horizon bloom */
-    radial-gradient(1000px 320px at 50% 75%, rgba(255,79,216,0.26), transparent 68%),
-    radial-gradient(900px 280px at 50% 78%, rgba(85,246,255,0.18), transparent 64%),
-    radial-gradient(760px 240px at 50% 80%, rgba(180,124,255,0.16), transparent 64%),
+    /* horizon bloom - simplified */
+    radial-gradient(900px 280px at 50% 78%, rgba(85,246,255,0.10), transparent 64%),
+    radial-gradient(760px 240px at 50% 80%, rgba(180,124,255,0.08), transparent 64%);
 
-    /* scanlines */
-    repeating-linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.05) 0px,
-      rgba(255,255,255,0.05) 1px,
-      transparent 2px,
-      transparent 7px
-    );
-
-  opacity: 0.48;
-  mix-blend-mode: screen;
+  opacity: 0.35;
+  mix-blend-mode: normal;
 }
 
-/* stars / spark */
+/* stars / spark - DISABLED for performance */
 .bg::after{
+  display: none;
   content:"";
   position:absolute;
   inset:0;
@@ -152,21 +138,23 @@ body{
   background-size: 220px 220px, 320px 320px, 420px 420px;
   background-position: 0 0, 60px 120px, 140px 240px;
 
-  opacity: 0.14;
+  opacity: 0;
   filter: blur(0.2px);
 }
 
-/* hotter neon orbs */
+/* hotter neon orbs - DISABLED for performance */
 .bg-orb{
+  display: none;
   position:absolute;
   width: 680px;
   height: 680px;
   border-radius: 999px;
-  opacity: 0.52;
+  opacity: 0;
   filter: blur(18px) saturate(1.35);
 }
 
 .orb-a{
+  display: none;
   left: -260px;
   top: -200px;
   background:
@@ -176,6 +164,7 @@ body{
 }
 
 .orb-b{
+  display: none;
   right: -300px;
   top: 10px;
   background:
@@ -185,6 +174,7 @@ body{
 }
 
 .orb-c{
+  display: none;
   left: 18%;
   bottom: -360px;
   background:
@@ -193,17 +183,18 @@ body{
     radial-gradient(circle at 70% 75%, rgba(255,234,120,0.28), transparent 60%);
 }
 
-/* Deeper vignette + bloom framing */
+/* Deeper vignette + bloom framing - OPTIMIZED for scroll */
 body::before{
   content:"";
   position: fixed;
-  inset:0;
-  pointer-events:none;
+  inset: 0;
+  pointer-events: none;
   background:
     radial-gradient(circle at 50% 25%, transparent 0 45%, rgba(0,0,0,0.70) 82%),
     radial-gradient(circle at 50% 110%, rgba(0,0,0,0.75), transparent 60%);
   opacity: 0.65;
   z-index: -1;
+  will-change: auto;
 }
 
 
@@ -230,9 +221,11 @@ body::before{
   gap: 18px;
   padding: 16px 24px;
 
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(16px);
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  will-change: auto;
+  contain: layout;
 }
 
 .brand {
@@ -323,7 +316,7 @@ body::before{
   box-shadow: 0 10px 28px rgba(0,0,0,0.40);
 }
 .btn:hover {
-  transform: translateY(-1px);
+  transform: none;
   border-color: rgba(255,255,255,0.26);
   background: rgba(255,255,255,0.08);
 }
@@ -349,21 +342,24 @@ body::before{
   margin-top: 20px;
   padding: 22px;
   border-radius: var(--r-xl);
-  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+  background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.14);
-  box-shadow: var(--shadow2);
-  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  backdrop-filter: none;
   position: relative;
   overflow: hidden;
+  will-change: auto;
+  contain: layout style paint;
 }
 .panel::before {
+  display: none;
   content: "";
   position: absolute;
   inset: -2px;
   background: radial-gradient(700px 260px at 20% 10%, rgba(85,246,255,0.14), transparent 55%),
               radial-gradient(700px 260px at 80% 0%, rgba(180,124,255,0.12), transparent 55%),
               radial-gradient(700px 260px at 50% 110%, rgba(255,79,216,0.10), transparent 60%);
-  opacity: 0.85;
+  opacity: 0;
   pointer-events: none;
 }
 
@@ -658,8 +654,8 @@ body::before{
               radial-gradient(700px 260px at 30% 10%, rgba(85,246,255,0.16), transparent 60%),
               radial-gradient(700px 260px at 70% 0%, rgba(180,124,255,0.12), transparent 60%);
   transform: translateX(-35%);
-  animation: sweep 4.6s ease-in-out infinite;
-  opacity: 0.9;
+  animation: none;
+  opacity: 0.4;
   pointer-events: none;
 }
 @keyframes sweep {
@@ -708,6 +704,7 @@ body::before{
     0 18px 60px rgba(0,0,0,0.55),
     0 0 28px rgba(255,79,216,0.08),
     0 0 26px rgba(85,246,255,0.07);
+  contain: layout style paint;
 }
 
 /* neon underline accents on headings */
@@ -736,19 +733,14 @@ body::before{
 }
 .btn-primary:hover{
   box-shadow:
-    0 22px 64px rgba(0,0,0,0.50),
-    0 0 22px rgba(85,246,255,0.26),
-    0 0 30px rgba(255,79,216,0.22),
-    0 0 40px rgba(180,124,255,0.16),
-    inset 0 1px 0 rgba(255,255,255,0.28);
+    0 10px 30px rgba(0,0,0,0.45),
+    0 0 18px rgba(85,246,255,0.12);
 }
 
-/* extra neon hover lift */
+/* extra neon hover lift - REDUCED */
 .card:hover, .person:hover, .shot:hover{
   box-shadow:
-    0 24px 76px rgba(0,0,0,0.60),
-    0 0 34px rgba(85,246,255,0.10),
-    0 0 34px rgba(255,79,216,0.10);
+    0 10px 30px rgba(0,0,0,0.45);
 }
 
 /* Gallery */
@@ -757,6 +749,7 @@ body::before{
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
   margin-top: 12px;
+  contain: layout style paint;
 }
 .shot {
   margin: 0;
@@ -765,16 +758,19 @@ body::before{
   border: 1px solid rgba(255,255,255,0.12);
   background: rgba(0,0,0,0.22);
   box-shadow: var(--shadow2);
+  contain: layout style paint;
 }
 .shot img {
   width: 100%;
   height: 240px;
   object-fit: cover;
   display: block;
-  transform: scale(1.01);
-  transition: transform 200ms ease;
+  transform: scale(1);
+  transition: none;
+  will-change: auto;
+  content-visibility: auto;
 }
-.shot:hover img { transform: scale(1.04); }
+.shot:hover img { transform: scale(1); }
 
 /* People */
 .people {
@@ -782,6 +778,7 @@ body::before{
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
   margin-top: 10px;
+  contain: layout style paint;
 }
 .person {
   display: grid;
@@ -792,11 +789,12 @@ body::before{
   color: var(--text);
   background: rgba(0,0,0,0.22);
   border: 1px solid rgba(255,255,255,0.12);
-  box-shadow: var(--shadow2);
-  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  transition: none;
+  contain: layout style paint;
 }
 .person:hover {
-  transform: translateY(-2px);
+  transform: none;
   border-color: rgba(255,255,255,0.22);
   background: rgba(255,255,255,0.05);
 }
