@@ -235,13 +235,12 @@ body::before{
   color: var(--text);
 }
 .brand-mark {
-  width: 34px; height: 34px;
-  border-radius: 12px;
-  background:
-    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.75), rgba(255,255,255,0.06) 55%, transparent 70%),
-    linear-gradient(135deg, rgba(85,246,255,0.35), rgba(180,124,255,0.25), rgba(255,79,216,0.15));
-  border: 1px solid rgba(255,255,255,0.18);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+  width: 42px; 
+  height: auto;
+  border-radius: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
 }
 .brand-text { display: grid; line-height: 1.05; }
 .brand-name {
