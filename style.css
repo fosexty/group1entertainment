@@ -40,7 +40,12 @@ body {
 }
 
 /* Background layers */
-.bg { position: absolute; inset: 0; z-index: -1; }
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
 /* ==========================
    FULL OUTRUN BACKGROUND UPGRADE
    ========================== */
@@ -53,6 +58,8 @@ body{
     radial-gradient(900px 700px at 50% 95%, rgba(255,79,216,0.16), transparent 60%),
     radial-gradient(700px 500px at 50% 55%, rgba(255,120,60,0.10), transparent 60%),
     linear-gradient(180deg, #03030a, #07081a);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 @media (min-width: 768px) {
@@ -279,6 +286,15 @@ body::before{
   gap: 10px;
 }
 
+.nav-actions .btn {
+  height: 38px;
+  padding: 0 14px;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 .icon-link {
   display: inline-flex;
   align-items: center;
@@ -490,6 +506,7 @@ body::before{
 .hero-card-row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 8px;
   margin-bottom: 12px;
 }
@@ -523,6 +540,7 @@ body::before{
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .sigil-panel {
@@ -595,6 +613,11 @@ body::before{
   border: 1px solid rgba(255,255,255,0.12);
 }
 .about-card h3 { margin: 0 0 10px; }
+.about-grid .about-card:nth-child(1) h3,
+.about-grid .about-card:nth-child(2) h3 {
+  font-size: 1.02rem;
+  text-align: center;
+}
 .list { margin: 0; padding-left: 18px; color: var(--muted); }
 .list li { margin: 7px 0; }
 
@@ -830,7 +853,7 @@ body::before{
 /* Work */
 .work-actions {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 12px;
   flex-wrap: wrap;
   margin-top: 10px;
@@ -846,8 +869,8 @@ body::before{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
-  padding: 16px 18px;
+  gap: 18px;
+  padding: 18px 20px;
   border-radius: var(--r-xl);
   background: rgba(0,0,0,0.22);
   border: 1px solid rgba(255,255,255,0.12);
@@ -855,8 +878,18 @@ body::before{
 }
 .footer-brand { font-weight: 950; color: rgba(255,255,255,0.85); }
 .footer-meta { font-size: 13px; margin-top: 2px; }
-.footer-right { display: flex; gap: 14px; }
-.footer-right a { color: var(--muted); text-decoration: none; font-weight: 800; }
+.footer-right { display: flex; gap: 12px; align-items: center; }
+.footer-right a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0 12px;
+  border-radius: 999px;
+}
 .footer-right a:hover { color: var(--text); }
 .footer-copy { text-align: center; padding: 10px 0 0; font-size: 12px; }
 
@@ -868,6 +901,34 @@ body::before{
   .people { grid-template-columns: 1fr; }
   .nav-links { display: none; }
   .wrap { width: min(var(--max), calc(100% - 28px)); padding-top: 86px; }
+  .hero-card-row { justify-content: center; }
+  .pill { text-align: center; }
+
+  .footer-inner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .footer-left {
+    display: grid;
+    gap: 4px;
+    justify-items: center;
+  }
+
+  .footer-right {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .footer-right a {
+    min-width: 110px;
+  }
 }
 
 /* Reduced motion */
@@ -1055,4 +1116,3 @@ body::before{
     content-visibility: auto;
     contain-intrinsic-size: 1px 900px;
   }
-}
