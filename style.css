@@ -688,6 +688,13 @@ img {
   }
 }
 
+@media (max-width: 759px) {
+  .hero {
+    min-height: 72vh;
+    background-position: center 26%;
+  }
+}
+
 @media (min-width: 980px) {
   .menu-toggle {
     display: none;
